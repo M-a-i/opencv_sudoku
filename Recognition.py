@@ -23,7 +23,7 @@ def img2vector(filename):
             imgvect[0, 32*i + j] = int(linestr[j])
     return imgvect
 
-def handwriteClassfiy(testfile, trainfile, k, num):
+def handwriteClassfiy(testfile, trainfile, k):
     """函数将trainfile中的文本图片转换成样本特征集和样本类型集，用testfile中的测试样本测试，无返回值
     
     Keyword argument:
@@ -45,8 +45,8 @@ def handwriteClassfiy(testfile, trainfile, k, num):
     #testNumber = len(testFileList)
     #errorcount = 0.0
     #for testname in testFileList:
-    testname='%s.txt'%str(num)
-    testdigit = img2vector(testfile + '/' + testname)
+    #testname='%s.txt'%str(num)
+    testdigit = img2vector(testfile + '/' + 'x.txt')
     classifyresult = KNN.classify(testdigit, trainDataSet, labels, k)
     #testStr = testname.split('.')[0]
     #testDigitLabel = testStr.split('_')[0]
